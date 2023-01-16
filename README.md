@@ -1,4 +1,10 @@
-# DjangoWebScraper
+# Django Web Scraper
+==================
+Flipkart Scraper
+=================
+
+Using BeautifulSoup and Requests in Python Django Rest Framework
+
 A webscraper for FlipKart product Listing Using Django And BeautifulSoup4
 
 The application is to showcase webpage scraping specifically ecommerce platforms like  Flipkart Product Listing
