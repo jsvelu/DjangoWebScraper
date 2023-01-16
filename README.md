@@ -11,3 +11,14 @@ The application was built using Django, Requests and BeautifulSoup4
 
 The scraped data is also stored in a local database like SQLite.
 
+Notes:
+======
+To run the Project Download the code.
+
+scrapproj\Scripts\activate
+
+python manage.oy runserver 
+
+In the browser : 
+
+127.0.0.1:8000/visualdb/inputurl
