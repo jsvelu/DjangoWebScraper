@@ -1,0 +1,43 @@
+<html>
+
+<center>
+<h1> HAPPY WEB SCRAPING </h1>
+<p><h2> ALL SCRAPED DATA </h2></p>
+{% csrf_token %}
+    <p>
+        <table style='border:5px;border-style: solid;border-color: blue;'>
+            <tr>
+                <th> ID </th>
+                
+                <th> Title </th>
+                <th> Price </th>
+                <th> Picture </th>
+                <th> Rating</th>
+                
+                <th> Scraped Date </th>
+                <th> URL</th>
+            </tr>
+{% for d in  disp_data  %}
+    
+        
+            <tr>
+                <td>  {{ d.url_id }} </td> 
+                <td>  {{ d.product_title }} </td>
+                <td>  {{ d.product_price }} </td>
+                <td><img src="{{ d.product_image }}" width="200px"> </td>
+
+                
+                <td>  {{ d.product_rating }} </td>
+                <!-- <td>  {{ d.product_image }} </td> -->
+                <td>  {{ d.scraped_date }} </td>
+                <!-- <td style='width:150px;word-wrap:break-word;'>  {{ d.url_input }} </td> -->
+                
+            </tr>    
+
+        <p><h3> <img src="{{ scraped_data.product_image }}"> </h3> </p>
+
+{% endfor %}
+</table>
+</center>
+
+</html>

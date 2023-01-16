@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Web Page Scraper</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Web<span class="logo_colour">Scraper</span></a></h1>
+          <h2>Simple Flipkart Web Scraper</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="{% url 'inputurl' %}">Scrape Data</a></li>
+          <li><a href=""></a></li>
+          <li><a href="{% url 'displayall' %}">View All Scraped Data</a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1><b>Happy Scraping </b></h1>
+        <form method='POST' action=''>
+            {% csrf_token %}
+            <p>
+            <b>Paste URL : <input type="text" style="width: 450px;" name="searchurl" id="searchurl">
+            
+                <input type="Submit" Value='Get Data'>
+            </b></p>
+        </form>
+        
+        
+        <h2>RESULTS</h2>
+        {% if scraped_data  %}
+    
+        <p><h3><b> Name :  {{ scraped_data.product_name }} </h3> </p>
+        <p><h3> Price :  {{ scraped_data.product_price }} </h3> </p>
+        <p><h3> Rating :  {{ scraped_data.product_rating }} </h3> </p>
+        <!-- <p><h3> Image :  {{ scraped_data.product_image }} </h3> </p> -->
+
+        <p><h3> <img src="{{ scraped_data.product_image }}"> </h3> </p>
+
+        <p><h3> URL :  {{ scraped_data.prod_url }} </h3> </b></p>
+    
+        {% endif %}
+
+
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+       &copy; colour_blue | WEb Scraper  | Flipkart | 
+    </div>
+  </div>
+</body>
+</html>
